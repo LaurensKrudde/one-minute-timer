@@ -59,53 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     Widget page = TimerPage();
-    // switch (selectedIndex) {
-    //   case 0:
-    //     page = GeneratorPage();
-    //   case 1:
-    //     page = FavoritesPage();
-    //   case 2:
-    //     page = TimerPage();
-    //   default:
-    //     throw UnimplementedError("No widget for index $selectedIndex");
-    // }
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(
-      //     'One Minute Timer',
-      //     style: Theme.of(context).textTheme.titleLarge,
-      //   ),
-      // ),
       body: SafeArea(
         child: Container(
           color: Theme.of(context).colorScheme.primaryContainer,
           child: page,
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.favorite),
-      //       label: 'Favorites',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.timer_sharp),
-      //       label: 'Timer',
-      //     ),
-      //   ],
-      //   currentIndex: selectedIndex,
-      //   onTap: (value) {
-      //     print('selected: $value');
-      //     setState(() {
-      //       selectedIndex = value;
-      //     });
-      //   },
-      // ),
     );
   }
 }
@@ -278,17 +239,13 @@ class _TimerPageState extends State<TimerPage> {
           SizedBox(
             width: buttonSize,
             height: buttonSize,
-            child:// TweenAnimationBuilder<double>(
-              // tween: Tween(begin: 1.0, end: 0.0),
-              // duration: Duration(seconds: _totalSeconds),
-              // builder: (context, value, child) => 
+            child:
               CircularProgressIndicator(
                 value: _seconds / _totalSeconds,
                 strokeWidth: 25,
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
-          //),
           ElevatedButton(
             onPressed: () {
               print('Timer button pressed!');
@@ -305,7 +262,6 @@ class _TimerPageState extends State<TimerPage> {
             },
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
-              // padding: const EdgeInsets.all(80),
             ),
             child: SizedBox(
               width: buttonSize,
